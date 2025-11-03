@@ -95,3 +95,26 @@ function showContactView() {
     document.getElementById('view-contact').classList.remove('hidden');
     currentView = "contact";
 }
+// FUNCTION: hideAllViews
+// WHAT IT DOES: Hides all main content views
+// HOW IT WORKS:
+// 1. Adds 'hidden' class to all view sections
+function hideAllViews() {
+    document.getElementById('view-home').classList.add('hidden');
+    document.getElementById('view-random').classList.add('hidden');
+    document.getElementById('view-contact').classList.add('hidden');
+}
+
+// FUNCTION: prevPage
+// WHAT IT DOES: Goes to the previous page of GIF results (ONLY FOR HOME/SEARCH VIEW)
+// HOW IT WORKS: 
+// 1. Checks if we're not already on the first page
+// 2. If not, moves back by PAGE_SIZE in the results
+// 3. Calls the search function to update the display
+function prevPage() {
+    if (offset >= PAGE_SIZE) {
+        offset -= PAGE_SIZE;
+        handleClickSingle();
+    }
+}
+
