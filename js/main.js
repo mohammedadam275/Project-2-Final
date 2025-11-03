@@ -72,3 +72,26 @@ function showHomeView() {
     document.getElementById('view-home').classList.remove('hidden');
     currentView = "home";
 }
+// FUNCTION: showRandomView
+// WHAT IT DOES: Shows the random GIFs view
+// HOW IT WORKS:
+// 1. Hides all views
+// 2. Shows the random view
+// 3. Loads random GIFs
+function showRandomView() {
+    hideAllViews();
+    document.getElementById('view-random').classList.remove('hidden');
+    currentView = "random";
+    loadRandomGifs();
+}
+
+// FUNCTION: showContactView
+// WHAT IT DOES: Shows the contact form view
+// HOW IT WORKS:
+// 1. Hides all views
+// 2. Shows the contact view
+function showContactView() {
+    hideAllViews();
+    document.getElementById('view-contact').classList.remove('hidden');
+    currentView = "contact";
+}
