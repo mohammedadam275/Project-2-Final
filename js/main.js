@@ -39,3 +39,36 @@ function initializeApp() {
         event.preventDefault();
         handleContactSubmit();
     });
+ // Show home view by default
+    resetAndShowHome();
+}
+
+// FUNCTION: resetAndShowHome
+// WHAT IT DOES: Resets the home page and shows it
+// HOW IT WORKS:
+// 1. Clears any previous search results
+// 2. Resets search input field
+// 3. Resets pagination
+// 4. Shows the home view with default state
+function resetAndShowHome() {
+    hideAllViews();
+    document.getElementById('view-home').classList.remove('hidden');
+    currentView = "home";
+    
+    // Reset everything to initial state
+    offset = 0;
+    currentSearchTerm = "";
+    document.getElementById('search-input').value = "";
+    document.getElementById('home-results').innerHTML = "";
+}
+// FUNCTION: showHomeView
+// WHAT IT DOES: Shows the home/search view WITHOUT resetting (for pagination)
+// HOW IT WORKS:
+// 1. Hides all views
+// 2. Shows only the home view
+// 3. Keeps current search results intact
+function showHomeView() {
+    hideAllViews();
+    document.getElementById('view-home').classList.remove('hidden');
+    currentView = "home";
+}
